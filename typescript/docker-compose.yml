@@ -1,0 +1,8 @@
+services:
+
+  run:
+    build: .
+    entrypoint: /bin/bash
+    working_dir: /app
+    volumes:
+      - .:/app
