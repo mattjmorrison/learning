@@ -1,0 +1,36 @@
+services:
+
+  test:
+    build: .
+    entrypoint: go test -v
+    working_dir: /app/
+    volumes:
+      - .:/app
+
+  lint:
+    build: .
+    entrypoint: go lint
+    working_dir: /app/
+    volumes:
+      - .:/app
+
+  run:
+    build: .
+    entrypoint: go run .
+    working_dir: /app/src/github.com/mattjmorrison/firstapp
+    volumes:
+      - .:/app
+
+  build:
+    build: .
+    entrypoint: go build
+    working_dir: /app/src/github.com/mattjmorrison/firstapp
+    volumes:
+      - .:/app
+
+  shell:
+    build: .
+    entrypoint: /bin/bash
+    working_dir: /app/
+    volumes:
+      - .:/app

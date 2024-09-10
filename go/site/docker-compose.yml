@@ -1,0 +1,30 @@
+services:
+
+  test:
+    build: .
+    entrypoint: go test -v
+    working_dir: /app/greetings
+    volumes:
+      - .:/app
+
+  run:
+    build: .
+    entrypoint: go run .
+    working_dir: /app/hello
+    volumes:
+      - .:/app
+
+  build:
+    build: .
+    entrypoint: go build
+    working_dir: /app/hello
+    volumes:
+      - .:/app
+
+  shell:
+    build: .
+    entrypoint: /bin/bash
+    working_dir: /app/
+    volumes:
+      - .:/app
+
