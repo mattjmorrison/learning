@@ -1,0 +1,8 @@
+services:
+
+  django:
+    build: .
+    working_dir: /app/project
+    entrypoint: pipenv run python manage.py
+    volumes:
+      - .:/app
